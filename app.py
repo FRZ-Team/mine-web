@@ -1,14 +1,13 @@
 from datetime import timedelta, datetime
 from random import randint
 from flask import Flask, render_template, request, redirect, session, make_response
-import os
 from database import MySQLDatabase, User, Root
 from verify import verify
 from shop_table import Stock, Shop
 
 app = Flask(__name__)
 
-app.secret_key = os.environ.get('AppConfig')
+app.secret_key = '2f0095316bd5c0d6a2266616fb919b2b'
 
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=10)
 
@@ -224,11 +223,10 @@ def checkout(price, item):
                                    sum=price)
 
         else:
-            return render_template('no_access.html',
-                                   the_title=title)
+            return redirect('/shop')
 
     else:
-        return render_template('no_access.html')
+        return redirect('/shop')
 
 
 @app.route('/thanks')

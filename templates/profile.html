@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="static/lightslider.css">
     <script src="static/Jquery.js"></script>
     <script src="static/lightslider.js"></script>
-    <title>{%block title%}{% endblock %}</title>
+    <title>{%block title%}{{the_title}}{% endblock %}</title>
 </head>
 <body id="body" class="body-profile">
 <!--Header------------------------------------->
@@ -23,7 +23,7 @@
             <span><a class="logo1A" href="/homepage">McGrief</a></span>
         </div>
         <div id = "about">
-            <a href="about" title="О нас" onclick="slowScroll('#main')">О нас</a>
+            <a href="about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
             <a href="news" title="Новости" onclick="slowScroll('#main')">Новости</a>
             <a href="login" title="Логин" onclick="slowScroll('#main')">Логин</a>
             <a href = "registration_page" title="Регистрация" onclick="slowScroll('#contacts')">Регистрация</a>
