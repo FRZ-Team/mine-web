@@ -1,1 +1,1 @@
-web: gunicorn app:mine_back
+web: gunicorn app:app
