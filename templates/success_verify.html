@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+{%block title%}{{the_title}}{% endblock %}
+
+{% block content %}
+<!--header------------------------------------->
+   <header id="header" class="lock-padding">
+        <div id="logo1" onclick="slowScroll('#top')">
+            <span><a class="logo1A" href="/homepage">McGrief</a></span>
+        </div>
+        <div id = "about1">
+            <a href="/about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+            <a href="/news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+            <a href="/login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+            <a href = "/registration_page" title="Регистрация" onclick="slowScroll('#main')">Регистрация</a>
+            <a href = "/profile" title="Личный кабинет" onclick="slowScroll('#main')">Личный кабинет</a>
+            <a href="/homepage" title="Вернуться" onclick="slowScroll('#main')">Вернуться на главную</a>
+        </div>
+        <div id="header-phone">
+            <a href="#popup-block-menu" class="popup-link"><img src="static/VisualEditor_-_Icon_-_Menu.svg.png"></a>
+        </div>
+    </header>
+<!--succsess_verify------------------------------------->
+    <div id="success_verify">
+        <h1>вы удачно сменили пароль!</h1>
+        <span>чтоб вернуться в личный кабинет или на главную нажмите по ссылке ниже или выше</span>
+        <br>
+        <a href="/profile">Личный кабинет</a>
+        <br>
+        <br>
+        <a href="/afterLogin">Вернуться на главную</a>
+        <br>
+        <p>{{response}}</p>
+    </div>
+ <!--menu-popup------------------------------------->
+     <div class="popup-block" id="popup-block-menu">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Меню</div>
+                <div class="popup-text">
+                    <a href="/about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+                    <br>
+                    <br>
+                    <a href="/news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+                    <br>
+                    <br>
+                    <a href="/login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+                    <br>
+                    <br>
+                    <a href = "/registration_page" title="Регистрация" onclick="slowScroll('#main')">Регистрация</a>
+                    <br>
+                    <br>
+                    <a href = "/profile" title="Личный кабинет" onclick="slowScroll('#main')">Личный кабинет</a>
+                    <br>
+                    <br>
+                    <a href="/homepage" title="Вернуться" onclick="slowScroll('#main')">Вернуться на главную</a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+<!--script------------------------------------->
+    <script>
+        function slowScroll()
+        {
+            $('html,body').animate({
+                scrollTop: $(id).offset().top
+            },500)
+        }
+        $(document).on("scroll",function(){
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class","fixed");
+        })
+    </script>
+    <script src="static/popup.js"></script>
+
+
+
+{% endblock %}

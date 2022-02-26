@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{%block title%}{{the_title}}{% endblock %}
+{% block content %}
+<header>
+        <div id="logo1" onclick="slowScroll('#top')">
+            <span><a class="logo1A" href="/homepage">McGrief</a></span>
+        </div>
+        <div id = "about1">
+        </div>
+    </header>
+
+    <div id="aboutUs">
+        <h1>404 НЕ НАЙДЕНО</h1>
+        <br>
+        <span>Ой что то пошло не так...</span>
+        <br>
+        <span>Если вы ввели ссылку вручную,проверьте правильность ссылки!</span>
+        <br>
+        <a href="/homepage">Вернуться на главную</a>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E"></script>
+    <script>
+        function slowScroll()
+        {
+            $('html,body').animate({
+                scrollTop: $(id).offset().top
+            },500)
+        }
+        $(document).on("scroll",function(){
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class","fixed");
+        })
+    </script>
+{% endblock %}

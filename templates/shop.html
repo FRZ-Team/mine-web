@@ -1,0 +1,666 @@
+{% extends 'layout.html' %}
+{%block title%}{{the_title}}{% endblock %}
+
+
+{% block content %}
+    <header id="header" class="lock-padding">
+        <div id="logo1" onclick="slowScroll('#top')">
+            <span><a class="logo1A" href="/homepage">McGrief</a></span>
+        </div>
+        <div id = "about1">
+           <a href="/about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+            <a href="/news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+            <a href="/login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+            <a href = "/registration_page" title="Регистрация" onclick="slowScroll('#contacts')">Регистрация</a>
+            <a href = "/profile" title="Личный кабинет" onclick="slowScroll('#contacts')">Личный кабинет</a>
+            <a href="/homepage" title="Вернуться" onclick="slowScroll('#main')">Вернуться на главную</a>
+            <a href="#search" title="Поиск" class="search">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+        <div id="header-phone">
+            <a href="#popup-block-menu" class="popup-link"><img src="static/VisualEditor_-_Icon_-_Menu.svg.png"></a>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+<!--Search-bar------------------------------------->
+    <div class="search-bar">
+        <div class="search-data">
+            <ul class="elastic">
+                <a href="#popup-block" class="search-data-name popup-link" id="open_pop_up"><li class="check">Бог<span class = "invisible">бог</span></li></a>
+                <a href="#popup-block-2" class="search-data-name popup-link" id="open_pop_up"><li class="check">Демон<span class = "invisible">демон</span></li></a>
+                <a href="#popup-block-3" class="search-data-name popup-link" id="open_pop_up"><li class="check">Паладин<span class = "invisible">паладин</span></li></a>
+                <a href="#popup-block-4" class="search-data-name popup-link" id="open_pop_up"><li class="check">Вип<span class = "invisible">вип</span></li></a>
+                <a href="#popup-block-5" class="search-data-name popup-link" id="open_pop_up"><li class="check">Кароль<span class = "invisible">кароль</span></li></a>
+                <a href="#popup-block-6" class="search-data-name popup-link" id="open_pop_up"><li class="check">Рыцарь<span class = "invisible">рыцарь</span></li></a>
+                <a href="#popup-block-7" class="search-data-name popup-link" id="open_pop_up"><li class="check">Ангел<span class = "invisible">ангел</span></li></a>
+                <a href="#popup-block-8" class="search-data-name popup-link" id="open_pop_up"><li class="check">Нубас<span class = "invisible">нубас</span></li></a>
+            </ul>
+        </div>
+        <div class="search-input">
+            <input type="text" placeholder="поиск" id="elastic">
+            <a href="#" class="search-cancel">
+                <li class="fas fa-times"></li>
+            </a>
+        </div>
+    </div>
+
+<!--slider------------------------------------->
+    <ul id="adaptive" class="cs-hidden">
+        <li class="item-a">
+            <div class="full-slider-box f-slide-1">
+                <div class="slider-text-container">
+                    <div class = "f-slider-text">
+                    <span>Выгодное предложение</span>
+                    <strong>За регистрацию<br/>получи <font>купон</font></strong>
+                        <a href="#" class="f-slider-btn">в магазин</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="item-b">
+            <div class="full-slider-box f-slide-2">
+                <div class="slider-text-container">
+                    <div class = "f-slider-text">
+                    <span>Выгодное предложение</span>
+                    <strong>За регистрацию<br/>получи <font>купон</font></strong>
+                        <a href="#" class="f-slider-btn">в магазин</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="item-c">
+            <div class="full-slider-box f-slide-3">
+                <div class="slider-text-container">
+                    <div class = "f-slider-text">
+                    <span>Выгодное предложение</span>
+                    <strong>За регистрацию<br/>получи <font>купон</font></strong>
+                        <a href="#" class="f-slider-btn">в магазин</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+<!--categories------------------------------------->
+    <div class="feature-heading">
+        <h2>Категории</h2>
+    </div>
+
+    <ul id="autoWidth" class="cs-hidden">
+        <li class="item">
+            <div class="feature-box">
+                <a href="#">
+                    <img src="static/580b57fcd9996e24bc43c301.png">
+                </a>
+            </div>
+            <span>привелгии</span>
+
+        </li>
+        <li class="item">
+            <div class="feature-box">
+                <a href="#">
+                    <img src="static/3F3F3F3F3F_3F3F3F3F3F3F3F.png">
+                </a>
+            </div>
+            <span>скины</span>
+        </li>
+
+    </ul>
+<!--items------------------------------------->
+    <section class="new-arrival">
+        <div class="arrival-heading">
+            <strong>Товары</strong>
+             <a href="#" title="Поиск" class="search search-phone">
+                <i class="fas fa-search"></i>
+            </a>
+            <p>Выгодные цены!</p>
+        </div>
+
+        <div class="product-container">
+
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="static/19cfd763394375da65fdb51cc92194d2.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block" class="p-name popup-link" id="open_pop_up">БОГ</a>
+                    <span class="p-price"><s>1100 RUB</s></span>
+                    <span class="p-price">880 RUB</span>
+                    <a href="/checkout/880/god" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+             <div class="product-box">
+                <div class="product-img">
+                    <img src="static/unnamed_1.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-2" class="p-name popup-link">Демон</a>
+                    <span class="p-price">1000 RUB</span>
+                    <a href="/checkout/1000/devil" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+             <div class="product-box">
+                <div class="product-img">
+                    <img src="static/unnamed.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-3" class="p-name popup-link">Паладин</a>
+                    <span class="p-price">500 RUB</span>
+                    <a href="/checkout/500/paladin" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+             <div class="product-box">
+                <div class="product-img">
+                    <img src="static/3.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-4" class="p-name popup-link">Вип</a>
+                    <span class="p-price"><s>200 RUB</s></span>
+                    <span class="p-price">180 RUB</span>
+                    <a href="/checkout/180/vip" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+             <div class="product-box">
+                <div class="product-img">
+                    <img src="static/Golden_Sword_JE3_BE2.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-5" class="p-name popup-link">Кароль</a>
+                    <span class="p-price">150 RUB</span>
+                    <a href="/checkout/150/king" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+             <div class="product-box">
+                <div class="product-img">
+                    <img src="static/Iron_Sword_JE2_BE2.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-6" class="p-name popup-link">Рыцарь</a>
+                    <span class="p-price">100 RUB</span>
+                    <a href="/checkout/100/warrior" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+             <div class="product-box">
+                <div class="product-img">
+                    <img src="static/elytre.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-7" class="p-name popup-link">Ангел</a>
+                    <span class="p-price"><s>50 RUB</s></span>
+                    <span class="p-price">47 RUB</span>
+                    <a href="/checkout/47/angel" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+             <div class="product-box">
+                <div class="product-img">
+                    <img src="static/Wooden_Sword_JE2_BE2.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-8" class="p-name popup-link">нубас</a>
+                    <span class="p-price">25 RUB</span>
+                    <a href="/checkout/25/noob" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+<!--sale------------------------------------->
+       <div class="sale">
+        <div class="sale-box">
+            <img src="static/1132186.jpg">
+            <a href="#popup-block" class="popup-link">
+                <div class="sale-text">
+                    <strong>Бог</strong>
+                    <span>скидка 20%</span>
+                </div>
+            </a>
+        </div>
+         <div class="sale-box">
+            <img src="static/1116905.jpg">
+            <a href="#popup-block-7" class="popup-link">
+                <div class="sale-text">
+                    <strong>Ангел</strong>
+                    <span>скидка 5%</span>
+                </div>
+            </a>
+        </div>
+         <div class="sale-box">
+            <img src="static/1132186.jpg">
+            <a href="#popup-block-4" class=" popup-link">
+                <div class="sale-text">
+                    <strong>вип</strong>
+                    <span>скидка 10%</span>
+                </div>
+            </a>
+        </div>
+    </div>
+<!-----------------------for-you--------------------------------------------->
+     <div class="new-arrival">
+        <div class="arrival-heading">
+            <strong>Особенные предложении для вас</strong>
+            <p>Выгодные цены!</p>
+        </div>
+
+        <div class="product-container">
+
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="static/19cfd763394375da65fdb51cc92194d2.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block" class="p-name popup-link">БОГ</a>
+                    <span class="p-price"><s>1100 RUB</s></span>
+                    <span class="p-price">880 RUB</span>
+                    <a href="/checkout/880/god" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+             <div class="product-box">
+                <div class="product-img">
+                    <img src="static/elytre.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-7" class="p-name popup-link">Ангел</a>
+                    <span class="p-price"><s>50 RUB</s></span>
+                    <span class="p-price">47 RUB</span>
+                    <a href="/checkout/47/angel" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+            <div class="product-box">
+                <div class="product-img">
+                    <img src="static/3.png">
+                </div>
+                <div class="product-details">
+                    <a href="#popup-block-4" class="p-name popup-link">Вип</a>
+                    <span class="p-price"><s>200 RUB</s></span>
+                    <span class="p-price">180 RUB</span>
+                    <a href="/checkout/180/vip" class="shopping-bag">Купить</a>
+                </div>
+            </div>
+
+         </div>
+    </div>
+<!--banner------------------------------------->
+    <div class="banner-box f-slide-4">
+         <div class="banner-text-container">
+            <div class = "banner-text">
+                <span>Выгодное предложение</span>
+                <strong>За регистрацию<br/>получи <font>купон</font></strong>
+                <a href="#" class="banner-btn">в магазин</a>
+             </div>
+         </div>
+    </div>
+<!--service------------------------------------->
+    <div class="services">
+        <div class="services-box">
+            <i class="fas fa-headphones-alt"></i>
+            <span>Техподдержка 24/7</span>
+            <p>Готовы всегда помочь!</p>
+        </div>
+        <div class="services-box">
+            <i class="fas fa-sync-alt"></i>
+            <span>Возврат денег</span>
+            <p>Возврат денег в течений 24 часов после покупки!</p>
+        </div>
+    </div>
+<!--popup------------------------------------->
+        <div class="popup-block" id="popup-block">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Привелегия БОГА</div>
+                <div class="popup-img"><img src="static/19cfd763394375da65fdb51cc92194d2.png"></div>
+                <div class="popup-text">
+                    <p>Цена:</p>
+                    <span class="p-price"><s>1100 RUB</s></span>
+                    <p class="p-price">880 RUB</p>
+                </div>
+                <a href="/checkout/880/god" class="shopping-bag">Купить</a>
+                <div class="popup-text">
+                    <p>Доступные команды на сервере при помощи данной привелегий:</p>
+                    <ul>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="popup-block" id="popup-block-2">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Привелегия Демона</div>
+                <div class="popup-img"><img src="static/unnamed_1.png"></div>
+                <div class="popup-text">
+                    <p>Цена:</p>
+                    <p class="p-price">1000 RUB</p>
+                </div>
+                <a href="/checkout/1000/devil" class="shopping-bag">Купить</a>
+                <div class="popup-text">
+                    <p>Доступные команды на сервере при помощи данной привелегий:</p>
+                    <ul>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="popup-block" id="popup-block-3">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Привелегия Паладина</div>
+                <div class="popup-img"><img src="static/unnamed.png"></div>
+                <div class="popup-text">
+                    <p>Цена:</p>
+                    <p class="p-price">500 RUB</p>
+                </div>
+                <a href="/checkout/500/paladin" class="shopping-bag">Купить</a>
+                <div class="popup-text">
+                    <p>Доступные команды на сервере при помощи данной привелегий:</p>
+                    <ul>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="popup-block" id="popup-block-4">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Привелегия Випа</div>
+                <div class="popup-img"><img src="static/3.png"></div>
+                <div class="popup-text">
+                    <p>Цена:</p>
+                    <span class="p-price"><s>200 RUB</s></span>
+                    <p class="p-price">180 RUB</p>
+                </div>
+                <a href="/checkout/180/vip" class="shopping-bag">Купить</a>
+                <div class="popup-text">
+                    <p>Доступные команды на сервере при помощи данной привелегий:</p>
+                    <ul>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="popup-block" id="popup-block-5">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Привелегия Кароля</div>
+                <div class="popup-img"><img src="static/Golden_Sword_JE3_BE2.png"></div>
+                <div class="popup-text">
+                    <p>Цена:</p>
+                    <p class="p-price">150 RUB</p>
+                </div>
+                <a href="/checkout/150/king" class="shopping-bag">Купить</a>
+                <div class="popup-text">
+                    <p>Доступные команды на сервере при помощи данной привелегий:</p>
+                    <ul>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="popup-block" id="popup-block-6">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Привелегия Рыцаря</div>
+                <div class="popup-img"><img src="static/Iron_Sword_JE2_BE2.png"></div>
+                <div class="popup-text">
+                    <p>Цена:</p>
+                    <p class="p-price">100 RUB</p>
+                </div>
+                <a href="/checkout/100/warrior" class="shopping-bag">Купить</a>
+                <div class="popup-text">
+                    <p>Доступные команды на сервере при помощи данной привелегий:</p>
+                    <ul>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="popup-block" id="popup-block-7">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Привелегия Ангела</div>
+                <div class="popup-img"><img src="static/elytre.png"></div>
+                <div class="popup-text">
+                    <p>Цена:</p>
+                    <span class="p-price"><s>50 RUB</s></span>
+                    <p class="p-price">47 RUB</p>
+                </div>
+                <a href="/checkout/47/angel" class="shopping-bag">Купить</a>
+                <div class="popup-text">
+                    <p>Доступные команды на сервере при помощи данной привелегий:</p>
+                    <ul>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="popup-block" id="popup-block-8">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Привелегия Нубаса</div>
+                <div class="popup-img"><img src="static/Wooden_Sword_JE2_BE2.png"></div>
+                <div class="popup-text">
+                    <p>Цена:</p>
+                    <p class="p-price">25 RUB</p>
+                </div>
+                <a href="/checkout/25/noob" class="shopping-bag">Купить</a>
+                <div class="popup-text">
+                    <p>Доступные команды на сервере при помощи данной привелегий:</p>
+                    <ul>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                        <li>/fly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+<!--menu-popup------------------------------------->
+     <div class="popup-block" id="popup-block-menu">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Меню</div>
+                <div class="popup-text">
+                    <a href="/about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+                    <br>
+                    <br>
+                    <a href="/news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+                    <br>
+                    <br>
+                    <a href="/login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+                    <br>
+                    <br>
+                    <a href = "/registration_page" title="Регистрация" onclick="slowScroll('#main')">Регистрация</a>
+                    <br>
+                    <br>
+                    <a href = "/profile" title="Личный кабинет" onclick="slowScroll('#main')">Личный кабинет</a>
+                    <br>
+                    <br>
+                    <a href="/homepage" title="Вернуться" onclick="slowScroll('#main')">Вернуться на главную</a>
+                    <br>
+                    <br>
+                    <a href="#" title="Поиск" class="search">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+<!--footer------------------------------------->
+    <footer>
+        <span class="mcGrief">MCGrief Лучший майнкрафт сервер!</span>
+
+    </footer>
+
+<!--scripts------------------------------------->
+    <script>
+        function slowScroll()
+        {
+            $('html,body').animate({
+                scrollTop: $(id).offset().top
+            },500)
+        }
+        $(document).on("scroll",function(){
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class","fixed");
+        })
+
+
+
+        $(document).on('click','.search',function(){
+            $('.search-bar').addClass('search-bar-active')
+            $('.popup-block').removeClass('active')
+        });
+        $(document).on('click','.search-cancel',function(){
+            $('.search-bar').removeClass('search-bar-active')
+        });
+        $(document).on('click','.check', function(){
+            $('.search-bar').removeClass('search-bar-active')
+        })
+
+
+
+
+        $(document).ready(function() {
+            $('#adaptive').lightSlider({
+                adaptiveHeight:true,
+                auto:true,
+                item:1,
+                slideMargin:0,
+                loop:true
+            });
+        });
+
+         $(document).ready(function() {
+            $('#autoWidth').lightSlider({
+                autoWidth:true,
+                loop:true,
+                onSliderLoad: function() {
+                 $('#autoWidth').removeClass('cS-hidden');
+                }
+            });
+         });
+    </script>
+
+    <script src="static/popup.js"></script>
+    <script src="static/search.js"></script>
+
+
+
+{% endblock %}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+    <meta name = "viewport" content="width = device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel = "stylesheet" href="static/style.css">
+    <link rel = "shortcut icon" href="icons/pngwing.com (6).png" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin = "anonymous"></script>
+
+    <link rel="stylesheet" href="css/lightslider.css">
+    <script src="static/Jquery.js"></script>
+    <script src="static/lightslider.js"></script>
+    <title>McGrief minecraft server</title>
+</head>
+
+
+<body id="body">
+<!--header------------------------------------->
+     <header id="header" class="lock-padding">
+        <div id="logo1" onclick="slowScroll('#top')">
+            <span><a class="logo1A" href="homepage">McGrief</a></span>
+        </div>
+        <div id = "about1">
+            <a href="about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+            <a href="news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+            <a href="login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+            <a href = "registration_page" title="Регистрация" onclick="slowScroll('#main')">Регистрация</a>
+            <a href = "profile" title="Личный кабинет" onclick="slowScroll('#main')">Личный кабинет</a>
+            <a href="homepage" title="Вернуться" onclick="slowScroll('#main')">Вернуться на главную</a>
+        </div>
+        <div id="header-phone">
+            <a href="#popup-block-menu" class="popup-link"><img src="static/VisualEditor_-_Icon_-_Menu.svg.png"></a>
+        </div>
+    </header>
+<!--confirm-pcode------------------------------------->
+    <div id="contacts">
+        <center><h5>Код верификаций</h5></center>
+        <center><p>Введите код которе прислан вам по электронной</p></center>
+        <form  id="form_input" method="POST" action="/verify_recovery">
+            <div class="input-control">
+                <label>Код<span>*</span></label><br>
+                <input type="password" placeholder="Введите код" name = "confirm" id ="confirm" required>
+                <div class="error2">{{ response }}</div>
+
+            </div>
+            <br>
+            <button id="mess_send" class="btn" type="submit">сменить пароль</button><br>
+            <br>
+        </form>
+    </div>
+    <!--menu-popup------------------------------------->
+     <div class="popup-block" id="popup-block-menu">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Меню</div>
+                <div class="popup-text">
+                    <a href="about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+                    <br>
+                    <br>
+                    <a href="news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+                    <br>
+                    <br>
+                    <a href="login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+                    <br>
+                    <br>
+                    <a href = "registration_page" title="Регистрация" onclick="slowScroll('#main')">Регистрация</a>
+                    <br>
+                    <br>
+                    <a href = "shop" title="Магазин" onclick="slowScroll('#main')">Магазин</a>
+                    <br>
+                    <br>
+                    <a href = "profile" title="Личный кабинет" onclick="slowScroll('#main')">Личный кабинет</a>
+                    <br>
+                    <br>
+                    <a href="homepage" title="Вернуться" onclick="slowScroll('#main')">Вернуться на главную</a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--script------------------------------------->
+    <script>
+
+         function slowScroll()
+        {
+            $('html,body').animate({
+                scrollTop: $(id).offset().top
+            },500)
+        }
+        $(document).on("scroll",function(){
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class","fixed");
+        })
+    </script>
+    <script src="static/popup.js"></script>
+
+
+</body>
+</html>

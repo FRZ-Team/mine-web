@@ -1,0 +1,222 @@
+{% extends 'layout.html' %}
+{%block title%}{{the_title}}{% endblock %}
+
+{% block content %}
+<!--Header------------------------------------->
+    <header id="header" class="lock-padding">
+        <div id="logo" onclick="slowScroll('#top')">
+            <span><a href="/homepage">McGrief</a></span>
+        </div>
+        <div id = "about">
+           <a href="/about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+            <a href="/news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+            <a href="/login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+            <a href = "registration_page" title="Регистрация" onclick="slowScroll('#contacts')">Регистрация</a>
+            <a href = "/shop" title="Магазин" onclick="slowScroll('#contacts')">Магазин</a>
+            <a href = "/profile" title="Личный кабинет" onclick="slowScroll('#contacts')">Личный кабинет</a>
+        </div>
+        <div id="header-phone">
+            <a href="#popup-block-menu" class="popup-link"><img src="static/hamburger-menu-icon-png-white-10.jpg"></a>
+        </div>
+    </header>
+<!--top2------------------------------------->
+    <div id = "top2">
+        <h1>McGrief</h1>
+        <h3>Лучший майнкрафт сервер!</h3>
+        <div id = "welcome">
+            <p class="hi">{{response}}</p>
+            <a href="/profile">личный кабинет</a>
+
+        </div>
+        <a href="/logout" class="exitAc">выйти</a>
+    </div>
+
+<!--main------------------------------------->
+    <div id="main">
+        <div class="intro">
+            <h2>McGrief</h2>
+            <span>IP Adress:MCGRIEF.aternos.me</span>
+        </div>
+        <div class="text">
+            <span>На нашем сервере вы сможете выживать,гриферить,находить напарников и путешествовать в месте!</span>
+        </div>
+    </div>
+
+<!--overview------------------------------------->
+    <div id="overview">
+        <h2>Заходи на наш дискорд сервер!</h2>
+        <div class="img">
+            <a href="https://discord.gg/7QQgVHqJ5j"><img src="static/7O9AMX_1.png" alt=""></a>
+        </div>
+    </div>
+<!--section------------------------------------->
+    <section>
+        <h2 class="FaqT">FAQS </h2>
+
+        <div class="faq">
+            <div class="qusetion">
+                <h3>Зачем нужна регистрация на сайте?</h3>
+
+                <svg width ="15" height = "10" viewBox="0 0 42 25">
+                    <path
+                        d="M3 3L21 21L39 3"
+                        stroke = "white"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Регистрация нужна для покупки привелегий на сервере,а так же за просмотром статистики на сервере например:если вы находитесь в бане.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="qusetion">
+                <h3>Как зайти на сервер?</h3>
+
+                <svg width ="15" height = "10" viewBox="0 0 42 25">
+                    <path
+                        d="M3 3L21 21L39 3"
+                        stroke = "white"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Всё очень легко и просто.заходите в майнкрафт ->сетевая игра->айпи адрес-> вбивайте в строку айпи адрес которе указан выше->заходите и наслаждаетесь игрой на нашем сервере.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="qusetion">
+                <h3>Чего привелегий дают?</h3>
+
+                <svg width ="15" height = "10" viewBox="0 0 42 25">
+                    <path
+                        d="M3 3L21 21L39 3"
+                        stroke = "white"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Привелегий дают роли на майнкрафт сервере с которыми открываються команды по типу "/fly" которе не доступны игрокам без той или иной роли.
+                </p>
+            </div>
+        </div>
+         <div class="faq">
+            <div class="qusetion">
+                <h3>Вы мошенники и можете кинуть нас на деньги?</h3>
+
+                <svg width ="15" height = "10" viewBox="0 0 42 25">
+                    <path
+                        d="M3 3L21 21L39 3"
+                        stroke = "white"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Нет)))но если без шуток то у нас нет никакого смысла обманывать вас.и не застваляем вас покупать привелегий.выбор только за вами!
+                </p>
+            </div>
+        </div>
+         <div class="faq">
+            <div class="qusetion">
+                <h3>Нет подключения к серверу?</h3>
+
+                <svg width ="15" height = "10" viewBox="0 0 42 25">
+                    <path
+                        d="M3 3L21 21L39 3"
+                        stroke = "white"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Периодически мы будем делать обновления для сервера и отключать его.ну или же у вас могут быть проблемы с интернетом так что стоит убидеться что вы подключены к интернету и работает ли он.мы будем сообщать о технических работах.
+                </p>
+            </div>
+        </div>
+          <div class="faq">
+            <div class="qusetion">
+                <h3>Безопасно ли храняться наши данные?</h3>
+
+                <svg width ="15" height = "10" viewBox="0 0 42 25">
+                    <path
+                        d="M3 3L21 21L39 3"
+                        stroke = "white"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Да,абсолютно.</p>
+            </div>
+        </div>
+    </section>
+
+<!--menu-popup------------------------------------->
+     <div class="popup-block" id="popup-block-menu">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Меню</div>
+                <div class="popup-text">
+                     <a href="/about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+                    <br>
+                    <br>
+                    <a href="/news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+                    <br>
+                    <br>
+                    <a href="/login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+                    <br>
+                    <br>
+                    <a href = "/registration_page" title="Регистрация" onclick="slowScroll('#main')">Регистрация</a>
+                    <br>
+                    <br>
+                    <a href = "/shop" title="Магазин" onclick="slowScroll('#main')">Магазин</a>
+                    <br>
+                    <br>
+                    <a href = "/profile" title="Личный кабинет" onclick="slowScroll('#main')">Личный кабинет</a>
+                    <br>
+                    <br>
+                    <a href="/homepage" title="Вернуться" onclick="slowScroll('#main')">Вернуться на главную</a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+<!--script------------------------------------->
+    <script>
+
+         function slowScroll()
+        {
+            $('html,body').animate({
+                scrollTop: $(id).offset().top
+            },500)
+        }
+        $(document).on("scroll",function(){
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class","fixed");
+        })
+    </script>
+    <script>
+        const faqs =  document.querySelectorAll(".faq");
+
+        faqs.forEach(faq => {
+            faq.addEventListener("click",() => {
+                faq.classList.toggle("active");
+            })
+        })
+    </script>
+     <script src="static/popup.js"></script>
+{% endblock %}

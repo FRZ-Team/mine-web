@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{%block title%}{{the_title}}{% endblock %}
+
+{% block content %}
+  <div id="contacts">
+        <center><h5>Добавить продукт</h5></center>
+        <form  id="form_input" method="POST" action="/admin">
+            <div class="input-control">
+                <label>Товар<span></span></label><br>
+                <input type="text" placeholder="Название" name = "item" id ="item">
+                <div class="error"></div>
+            </div>
+
+            <br>
+            <div class="input-control">
+                <label>Цена<span>*</span></label><br>
+                <input type="number" placeholder="Введи цену" name = "price" id ="price">
+                <div class="error">{{ response }}</div>
+            </div>
+              <br>
+
+
+            <button id="mess_send" class="btn" type="submit">Отправить</button><br>
+            <br>
+        </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name = "viewport" content="width = device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel = "stylesheet" href="static/style.css">
+    <link rel = "shortcut icon" href="static/img/pngwing.com%20(6).png" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin = "anonymous"></script>
+
+    <link rel="stylesheet" href="static/lightslider.css">
+    <script src="static/Jquery.js"></script>
+    <script src="static/lightslider.js"></script>
+    <title>{%block title%}{% endblock %}</title>
+</head>
+<body id="body" class="body-profile">
+<!--Header------------------------------------->
+    <header id="header" class="lock-padding">
+        <div id="logo" onclick="slowScroll('#top')">
+            <span><a class="logo1A" href="/homepage">McGrief</a></span>
+        </div>
+        <div id = "about">
+            <a href="about" title="О нас" onclick="slowScroll('#main')">О нас</a>
+            <a href="news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+            <a href="login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+            <a href = "registration_page" title="Регистрация" onclick="slowScroll('#contacts')">Регистрация</a>
+            <a href = "profile" title="Личный кабинет" onclick="slowScroll('#contacts')">Личный кабинет</a>
+        </div>
+        <div id="header-phone">
+            <a href="#popup-block-menu" class="popup-link"><img src="static/hamburger-menu-icon-png-white-10.jpg"></a>
+        </div>
+    </header>
+
+
+<!--profile------------------------------------->
+    <div id="profile">
+        <div class="profile-content">
+            <h1>Характеристики</h1>
+
+            <label>Имя пользователя</label>
+            <div class="username">{{username}}</div>
+            <br>
+
+            <label>Привелегий</label>
+            <div class="prefs">{{root}}</div>
+            <br>
+
+            <label>Дата регистраций</label>
+            <div class="registrationDate">{{registration_date}}</div>
+            <br>
+
+            <label>Дата последнего входа</label>
+            <div class="enterDate">{{login_date}}</div>
+            <br>
+
+            <label>Изменить пароль</label>
+            <p><a href = "/forgot_password"class="passwordAc">изменить</a></p>
+            <br>
+            <label>Выйти из аккауна</label>
+            <p><a href = "/logout"class="exitAc">Выйти</a></p>
+            <br>
+
+             <div class="ButtonAnim">
+                <a href="/shop" class="butt">Магазин</a>
+            </div>
+            <div class="ButtonAnim">
+                <a href="https://discord.gg/7QQgVHqJ5j" class="butt">Дискорд</a>
+            </div>
+        </div>
+    </div>
+<!--menu-popup------------------------------------->
+     <div class="popup-block" id="popup-block-menu">
+        <div class="popup-block-body">
+            <div class="popup-block-content">
+                <a href = "#header" class="popup-block-close" id="pop_up_close">X</a>
+                <div class="popup-title">Меню</div>
+                <div class="popup-text">
+                     <a href="/about_us" title="О нас" onclick="slowScroll('#main')">О нас</a>
+                    <br>
+                    <br>
+                    <a href="/news" title="Новости" onclick="slowScroll('#main')">Новости</a>
+                    <br>
+                    <br>
+                    <a href="/login" title="Логин" onclick="slowScroll('#main')">Логин</a>
+                    <br>
+                    <br>
+                    <a href = "/registration_page" title="Регистрация" onclick="slowScroll('#main')">Регистрация</a>
+                    <br>
+                    <br>
+                    <a href = "/shop" title="Магазин" onclick="slowScroll('#main')">Магазин</a>
+                    <br>
+                    <br>
+                    <a href = "/profile" title="Личный кабинет" onclick="slowScroll('#main')">Личный кабинет</a>
+                    <br>
+                    <br>
+                    <a href="/homepage" title="Вернуться" onclick="slowScroll('#main')">Вернуться на главную</a>
+                </div>
+                </div>
+            </div>
+        </div>
+
+<!--------------------footer------------------------------------------>
+<footer id="profile-footer">
+        <span class="mcGrief">MCGrief Лучший майнкрафт сервер!</span>
+</footer>
+
+
+<!--script------------------------------------->
+    <script>
+        function slowScroll()
+        {
+            $('html,body').animate({
+                scrollTop: $(id).offset().top
+            },500)
+        }
+        $(document).on("scroll",function(){
+            if($(window).scrollTop() === 0)
+                $("header").removeClass("fixed");
+            else
+                $("header").attr("class","fixed");
+        })
+    </script>
+<script src="static/popup.js"></script>
+
+</body>
+</html>
