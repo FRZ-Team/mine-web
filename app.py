@@ -23,8 +23,8 @@ def admins_page():
     if request.method == 'GET':
         if request.cookies.get('username').rstrip() == 'admin':
             return render_template('administration_page.html')
-        else:
-            redirect('/')
+
+        return redirect('/')
 
     if request.method == 'POST':
         to_stock = Stock(item=request.form['item'], price=request.form['price'])
