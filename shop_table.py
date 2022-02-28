@@ -1,5 +1,12 @@
 from database import MySQLDatabase
 
+import mysql.connector.errors
+
+DBCONFIG = {'host': 'eu-cdbr-west-02.cleardb.net',
+            'user': 'b8a14ff118d075',
+            'password': '0922b736',
+            'database': 'heroku_b7354dfae7a5454'}
+
 
 class Stock:
     def __init__(self, price='', item=''):
@@ -9,10 +16,26 @@ class Stock:
 
 class Shop(MySQLDatabase):
 
+    def __init__(self):
+        self.conn = mysql.connector.connect(**DBCONFIG)
+        self.cursor = self.conn.cursor()
+
     def check_if_item_exists(self, product: Stock):
-        self.cursor.execute(f"select * from shop where item = '{product.item}' and price = '{product.price}'")
-        return bool(self.cursor.fetchall())
+        try:
+            self.cursor.execute(f"select * from shop where item = '{product.item}' and price = '{product.price}'")
+            return bool(self.cursor.fetchall())
+
+        except (mysql.connector.errors.InterfaceError, mysql.connector.errors.OperationalError):
+            self.conn()
+            self.cursor.execute(f"select * from shop where item = '{product.item}' and price = '{product.price}'")
+            return bool(self.cursor.fetchall())
 
     def add_new_item(self, product: Stock):
-        self.cursor.execute(f"INSERT INTO shop (item, price) values ('{product.item}', '{product.price}')")
-        self.conn.commit()
+        try:
+            self.cursor.execute(f"INSERT INTO shop (item, price) values ('{product.item}', '{product.price}')")
+            self.conn.commit()
+
+        except (mysql.connector.errors.InterfaceError, mysql.connector.errors.OperationalError):
+            self.conn()
+            self.cursor.execute(f"INSERT INTO shop (item, price) values ('{product.item}', '{product.price}')")
+            self.conn.commit()

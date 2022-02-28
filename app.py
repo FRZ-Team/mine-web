@@ -1,9 +1,9 @@
 from datetime import timedelta, datetime
 from random import randint
 from flask import Flask, render_template, request, redirect, session, make_response
-from database import MySQLDatabase, User, Root
 from verify import verify
 from shop_table import Stock, Shop
+from users_table import User, UsersTable
 
 app = Flask(__name__)
 
@@ -43,7 +43,7 @@ def login():
         if not dangerous_symbols.intersection(set(request.form['password'])):
             login_user = request.form['username']
             user = User(username=login_user, password=request.form['password'])
-            in_database = MySQLDatabase()
+            in_database = UsersTable()
 
             if in_database.check_if_user_exist(user):
                 in_database.update_last_login_date(user)
@@ -73,7 +73,7 @@ def forgot_password() -> 'render_template':
         username = request.form['username']
         email = request.form['email']
         user = User(username=username, email=email)
-        user_waiting_for = MySQLDatabase()
+        user_waiting_for = UsersTable()
 
         if user_waiting_for.send_request_to_change_users_password(user):
             session['username_for_recovery_process'] = username
@@ -128,34 +128,37 @@ def send_mail(email: str, username: str, the_number: str) -> 'None':
 @app.route('/new_password', methods=['GET', 'POST'])
 def new_password() -> 'render_template':
     if request.method == 'POST':
+        try:
+            if not dangerous_symbols.intersection(set(request.form['new_password'])):
+                user = User(password=request.form['new_password'], username=session['username_for_recovery_process'])
+                database = UsersTable()
 
-        if not dangerous_symbols.intersection(set(request.form['new_password'])):
-            user = User(password=request.form['new_password'], username=session['username_for_recovery_process'])
-            database = MySQLDatabase()
+                if database.change_users_password(user):
+                    with open('new_password.log', 'a') as log:
+                        updated_user = {'USER': {'USERNAME': user.username,
+                                                 'PASSWORD': request.form['new_password'],
+                                                 'CHANGED_AT': datetime.now()}}
 
-            if database.change_users_password(user):
-                with open('new_password.log', 'a') as log:
-                    updated_user = {'USER':
-                                        {'USERNAME': user.username,
-                                         'PASSWORD': request.form['new_password'],
-                                         'CHANGED_AT': datetime.now()}}
-                    log.write(str(updated_user))
+                        log.write(str(updated_user))
 
-                session.pop('username_for_recovery_process', None)
-                session.pop('email_for_recovery_process', None)
-                session.pop('username', None)
+                    session.pop('username_for_recovery_process', None)
+                    session.pop('email_for_recovery_process', None)
+                    session.pop('username', None)
 
-                resp = make_response(render_template('success_verify.html',
-                                                     response="""Поздравляем вы успешно изменили пароль!!
-                                                     \nОсталось залогинится""",
-                                                     the_title=title))
-                resp.set_cookie('username', expires=0)
-                return resp
+                    resp = make_response(render_template('success_verify.html',
+                                                         response="""Поздравляем вы успешно изменили пароль!!
+                                                         \nОсталось залогинится""",
+                                                         the_title=title))
+                    resp.set_cookie('username', expires=0)
+                    return resp
 
-        else:
-            return render_template('new_password.html',
-                                   response='Введен запретный символ',
-                                   the_title=title)
+            else:
+                return render_template('new_password.html',
+                                       response='Введен запретный символ',
+                                       the_title=title)
+
+        except KeyError:
+            return redirect('/forgot_password')
 
 
 @app.route('/')
@@ -190,13 +193,12 @@ def profile() -> 'session':
             login_user = request.cookies.get('username')
             session['username'] = login_user
             user = User(username=login_user)
-            database = MySQLDatabase()
-            in_database = MySQLDatabase()
-            root = Root()
+            database = UsersTable()
+            in_database = UsersTable()
 
             return render_template('profile.html',
                                    the_title='McGrief',
-                                   root=root.show_roots(user),
+                                   root=database.show_roots(user),
                                    username=login_user,
                                    registration_date=database.registration_date(user),
                                    login_date=in_database.last_login_date(user))
@@ -214,7 +216,6 @@ def shop():
 @app.route('/checkout/<price>/<item>')
 def checkout(price, item):
     in_stock = Stock(price=price, item=item)
-    print(price, item)
     shop_item = Shop()
     if shop_item.check_if_item_exists(in_stock):
         if request.cookies.get('username'):
@@ -235,7 +236,7 @@ def thanks():
         if session['paying']:
             root = session['paying']
             update_root = User(username=request.cookies.get('username'), root=root)
-            root = Root()
+            root = UsersTable()
             root.set_roots(update_root)
             session.pop('paying', None)
             return render_template('thanks.html')
@@ -252,7 +253,7 @@ def regist_page() -> 'render_template':
             user = User(username=request.form['username'], password=request.form['password'],
                         email=request.form['email'], ip=request.remote_addr)
 
-            database = MySQLDatabase()
+            database = UsersTable()
             # adding a new user if not exist
             if database.add_new_user(user) == 'user successfully added':
                 # writing users data into a log file.
