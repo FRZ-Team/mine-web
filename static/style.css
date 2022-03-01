@@ -464,7 +464,10 @@ h1,h2,h3,h4,h5{
     .input-control .error {
 
         width: 200px;
-       margin-bottom: 30%;
+        margin-bottom: 30%;
+    }
+    .btn{
+        margin-top: 40%;
     }
 
 }
@@ -481,7 +484,11 @@ h1,h2,h3,h4,h5{
     #contacts h5 {margin-top: 20%;font-size: 2em;}
 
 }
-
+@media(max-width:478px){
+    .input-control{
+        margin-bottom: 30%;
+    }
+}
 /*regist*/
 header #logo1 {
     color:#262626;
@@ -820,7 +827,8 @@ svg{
 .profile-content{
     width: 80%;
     margin: 0 auto;
-    margin-top: 4%;
+    margin-top: 10%;
+    margin-bottom: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
