@@ -4,10 +4,9 @@ import mysql.connector.errors
 
 from database import MySQLDatabase
 
-DBCONFIG = {'host': 'eu-cdbr-west-02.cleardb.net',
-            'user': 'b8a14ff118d075',
-            'password': '0922b736',
-            'database': 'heroku_b7354dfae7a5454'}
+import os
+
+DBCONFIG = os.environ.get("DBCONFIG")
 
 
 class User:
