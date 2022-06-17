@@ -1,8 +1,9 @@
 import smtplib
 from email.message import EmailMessage
+import os
 
-EMAIL_ADDRESS = 'th3mcgrief@gmail.com'
-EMAIL_PASSWORD = 'rcsauhzjravvoutf'
+EMAIL_ADDRESS = os.environ.get('email')
+EMAIL_PASSWORD = os.environ.get('password)
 
 
 def verify(the_mail, name, number):
