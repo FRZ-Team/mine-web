@@ -284,7 +284,6 @@ def regist_page() -> 'render_template':
                 return render_template('regist.html',
                                        the_title='McGrief',
                                        response=the_response)
-    # the default page view
     return render_template('regist.html',
                            the_title=title, )
 
